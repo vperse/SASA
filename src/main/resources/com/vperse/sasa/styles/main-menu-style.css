@@ -1,0 +1,7 @@
+.root{
+    -fx-background-image: url('../images/sasa-bg.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-attachment: fixed;
+    -fx-background-position: center;
+}

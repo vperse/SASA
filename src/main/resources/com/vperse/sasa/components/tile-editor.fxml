@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="525.0" prefWidth="400.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.vperse.sasa.editor.TileEditorController">
+
+   <AnchorPane layoutX="100.0" layoutY="165.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="165.0">
+      <Rectangle id="tileRect" fx:id="tileRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="-25.0" layoutY="-25.0" onMouseClicked="#changeColor" onMouseEntered="#desaturate" onMouseExited="#saturate" stroke="BLACK" strokeType="INSIDE" width="130.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="35.0" />
+      <Rectangle id="leftRect" fx:id="leftConnectorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="-86.0" layoutY="-32.0" onMouseClicked="#changeColor" onMouseEntered="#desaturate" onMouseExited="#saturate" stroke="BLACK" strokeType="INSIDE" visible="false" width="35.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="35.0" />
+      <Rectangle id="topRect" fx:id="topConnectorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="35.0" layoutX="15.0" onMouseClicked="#changeColor" onMouseEntered="#desaturate" onMouseExited="#saturate" stroke="BLACK" strokeType="INSIDE" visible="false" width="130.0" AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle id="rightRect" fx:id="rightConnectorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="130.0" layoutX="35.0" layoutY="-25.0" onMouseClicked="#changeColor" onMouseEntered="#desaturate" onMouseExited="#saturate" stroke="BLACK" strokeType="INSIDE" visible="false" width="35.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+      <Rectangle id="bottomRect" fx:id="bottomConnectorRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="35.0" layoutX="15.0" layoutY="129.0" onMouseClicked="#changeColor" onMouseEntered="#desaturate" onMouseExited="#saturate" stroke="BLACK" strokeType="INSIDE" visible="false" width="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="165.0" />
+      <ColorPicker fx:id="colorPicker" layoutX="13.0" layoutY="63.0" visible="false" />
+   </AnchorPane>
+
+   <FlowPane layoutX="50.0" layoutY="-86.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="475.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label prefHeight="50.0" text="Tile ID:  ">
+         <FlowPane.margin>
+            <Insets left="10.0" />
+         </FlowPane.margin>
+      </Label>
+      <TextField fx:id="tileIDTextField" />
+   </FlowPane>
+
+   <Button id="leftAddButton" fx:id="leftConnectorAddButton" layoutX="70.0" layoutY="250.0" mnemonicParsing="false" onAction="#addConnector" prefHeight="30.0" prefWidth="30.0" text="+" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="250.0" />
+   <Button id="topAddButton" fx:id="topConnectorAddButton" layoutX="185.0" layoutY="135.0" mnemonicParsing="false" onAction="#addConnector" prefHeight="30.0" prefWidth="30.0" text="+" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="135.0" />
+   <Button id="rightAddButton" fx:id="rightConnectorAddButton" layoutX="300.0" layoutY="248.0" mnemonicParsing="false" onAction="#addConnector" prefHeight="30.0" prefWidth="30.0" text="+" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="248.0" />
+   <Button id="bottomAddBtn" fx:id="bottomConnectorAddButton" layoutX="185.0" layoutY="365.0" mnemonicParsing="false" onAction="#addConnector" prefHeight="30.0" prefWidth="30.0" text="+" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="365.0" />
+   <Button id="leftRemBtn" fx:id="leftConnectorRemoveButton" layoutX="51.0" layoutY="176.0" mnemonicParsing="false" onAction="#rmvConnector" prefHeight="30.0" prefWidth="30.0" text="-" visible="false" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="235.0" />
+   <TextField fx:id="leftConnectorIDTextField" layoutX="15.0" layoutY="200.0" prefHeight="30.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="265.0" />
+   <Button id="topRmvBtn" fx:id="topConnectorRemoveButton" layoutX="88.0" layoutY="103.0" mnemonicParsing="false" onAction="#rmvConnector" prefHeight="30.0" prefWidth="30.0" text="-" visible="false" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="135.0" />
+   <TextField fx:id="topConnectorIDTextField" layoutX="113.0" layoutY="103.0" prefHeight="30.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="135.0" />
+   <Button id="rightRemBtn" fx:id="rightConnectorRemoveButton" layoutX="223.0" layoutY="176.0" mnemonicParsing="false" onAction="#rmvConnector" prefHeight="30.0" prefWidth="30.0" text="-" visible="false" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="235.0" />
+   <TextField fx:id="rightConnectorIDTextField" layoutX="188.0" layoutY="200.0" prefHeight="30.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="265.0" AnchorPane.topAnchor="265.0" />
+   <Button id="bottomRemBtn" fx:id="bottomConnectorRemoveButton" layoutX="88.0" layoutY="273.0" mnemonicParsing="false" onAction="#rmvConnector" prefHeight="30.0" prefWidth="30.0" text="-" visible="false" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="365.0" />
+   <TextField fx:id="bottomConnectorIDTextField" layoutX="113.0" layoutY="273.0" prefHeight="30.0" prefWidth="100.0" visible="false" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="365.0" />
+
+</AnchorPane>
